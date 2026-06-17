@@ -1,0 +1,43 @@
+	
+--------------Dark Big Ghosts LITE----------------------------
+
+This pack contains 3d Model and Animations of a Dark Big Ghost.Best fit for fun and Creepy games.You can use this pack commercially.
+
+Note : This is a Lite version of our asset "Dark Big Ghosts"
+
+Technical Details:-
+		- Character : Big Ghost
+		- Props (Toggleable) : Hat, Axe and Devil head horns
+		- Prefabs : 10
+		- Poly count (in Tris) : 3340 (Big ghost with Props)
+		- Animations : 2 (Idle, Look)
+		- Used Material(s) : Unity standard material
+		- Texture maps : Albedo/Base Color, Emission
+		- Texture Size : 2048 x2048 (Png Fromat)
+
+Features:-
+	- Lowpoly model (Best for PC and Mobiles)
+	- Props can be toggled On/Off
+	- Mobile/AR Ready asset
+	- UV Unwrapped
+	- You can add Custom PBR textures
+	- Smooth animations (Seamless loop)
+	- High quality textures
+	- Textures can be Easy to edit/modify
+	- Demo scene, Colliders included
+		
+Folder details:-
+
+	Materials : Where the materials for the model located.	
+	Meshes : Contain FBX format of the 3d model.	
+	Textures : Contains Textures, that are in (.PNG) file format	
+	(Other folders - Prefabs, Scenes)
+
+How to use:-
+	Simply drag and drop the prefab from Prefab folder to your scene and use it.
+
+About Us : "SR Studios Kerala", Game developing company located in Alappuzha, Kerala, India
+
+Contact : srstudioskerala@gmail.com
+
+................Thanks for downloading this package................................
