@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1195374612628124382, guid: 8472a9cdac198684a9b2426ac2dd66c3, type: 3}
       propertyPath: playerSettings.jumpForce
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1195374612628124382, guid: 8472a9cdac198684a9b2426ac2dd66c3, type: 3}
       propertyPath: playerSettings.usesStamina
@@ -747,6 +747,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!1 &368835462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368835464}
+  - component: {fileID: 368835463}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &368835463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368835462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f5e29abd3e2f6408cb6fca95c669d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugFloorControls
+  floorManager: {fileID: 878814020}
+  nextFloorKey: 29
+  reloadFloorKey: 30
+--- !u!4 &368835464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368835462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417114038
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,13 +840,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonGenerator
   mapWidth: 50
   mapHeight: 50
-  bspDepth: 3
+  bspDepth: 4
   minPartitionSize: 10
-  minRoomSize: 6
+  minRoomSize: 4
   roomPadding: 1
   corridorBias: 0.9
-  corridorWidenChance: 0.55
+  corridorWidenChance: 0.158
   seed: 0
+  verboseConnectivityLog: 0
 --- !u!1 &423343831
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +924,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423343831}
   m_CullTransparentMesh: 1
+--- !u!1 &455696442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455696443}
+  m_Layer: 0
+  m_Name: DecorRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &455696443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455696442}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467589465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1257,61 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &878814019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878814021}
+  - component: {fileID: 878814020}
+  m_Layer: 0
+  m_Name: FloorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878814020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878814019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c550bcafb021408e895d93be98275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorManager
+  generator: {fileID: 417114040}
+  builder: {fileID: 1541643806}
+  navMeshBaker: {fileID: 1720906027}
+  playerSpawner: {fileID: 1083416790}
+  enemySpawner: {fileID: 1162518329}
+  decorator: {fileID: 2057906585}
+  floorConfigs:
+  - {fileID: 11400000, guid: 9239c94fd30dd2247a0b2cc61ff9aab7, type: 2}
+  - {fileID: 11400000, guid: 6efb130d0b648c349aa0bd6549f42d1a, type: 2}
+  extraEnemiesPerFloorBeyondList: 1
+  extraHealthPerFloorBeyondList: 0.15
+--- !u!4 &878814021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878814019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.79188, y: 0, z: -2.13879}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051157623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,11 +1757,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefabs:
-  - {fileID: 6351931128759503970, guid: 641bbf9c6dc3bff49b461307ee00cb53, type: 3}
   - {fileID: 4672112258080450259, guid: da05440f855f8514991e3a625a03195b, type: 3}
-  maxEnemiesPerRoom: 2
-  minEnemiesPerRoom: 0
+  - {fileID: 6351931128759503970, guid: 641bbf9c6dc3bff49b461307ee00cb53, type: 3}
+  maxEnemiesPerRoom: 3
+  minEnemiesPerRoom: 3
   spawnHeight: 1
+  sampleRadius: 3
   skipStartRoom: 1
   skipExitRoom: 1
   enemyParent: {fileID: 2115355324}
@@ -1732,7 +1867,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 3199627993532999882, guid: 898238ab0d589c74e9d49fbf1833dbef, type: 3}
   wallPrefab: {fileID: 1862087809171331071, guid: 03dbec1438114e340adc82c5e95d864b, type: 3}
   ceilingPrefab: {fileID: 7901370795630950840, guid: 51dc1b294730c6f4e99a6d8e35f20782, type: 3}
-  exitPrefab: {fileID: 6209167704233865800, guid: e8677bde30e06f341b0e897430988f1c, type: 3}
+  exitPrefab: {fileID: 7894119725284369642, guid: 77f5ab7c98b73aa498e21961541f6063, type: 3}
   pillarPrefab: {fileID: 118458008299423567, guid: 1211a8a70ccbf8941b4f049e54df814a, type: 3}
   tileSize: 4
   wallHeight: 4
@@ -2015,6 +2150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057906584}
   - component: {fileID: 2057906583}
+  - component: {fileID: 2057906585}
   m_Layer: 0
   m_Name: bootstrap
   m_TagString: Untagged
@@ -2034,11 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6f226a00588d43932bb24812e6a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameBootstrapper
-  generator: {fileID: 417114040}
-  builder: {fileID: 1541643806}
-  navMeshBaker: {fileID: 1720906027}
-  playerSpawner: {fileID: 1083416790}
-  enemySpawner: {fileID: 1162518329}
+  floorManager: {fileID: 878814020}
 --- !u!4 &2057906584
 Transform:
   m_ObjectHideFlags: 0
@@ -2054,6 +2186,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2057906585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057906582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5add3cc7cca402a43b6a3fa3b4501277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DungeonDecorator
+  floorPropPrefabs:
+  - {fileID: 123292, guid: df22dae66d96c2944adb65e1661878de, type: 3}
+  - {fileID: 152502, guid: 6d25f3b3d5ab1b243b60794d51a93b36, type: 3}
+  wallPropPrefabs:
+  - {fileID: 3531241029723772265, guid: 4b1aa2308c8cad548822fcd3387088ae, type: 3}
+  weaponPickupPrefabs:
+  - {fileID: 39021870808220807, guid: 59f209a6517268e4c899fed4b1697440, type: 3}
+  - {fileID: 5371435304333366952, guid: d91263601b783ae4d93efe5d17363bf3, type: 3}
+  - {fileID: 3694730247264947185, guid: a190b13acef388445887fce9f1b1528f, type: 3}
+  - {fileID: 3694730247264947185, guid: f703fd6f6c63d3f409ac131a51becba7, type: 3}
+  floorPropChance: 0.08
+  torchChance: 1
+  tablePrefabs:
+  - {fileID: 126206, guid: edd815d6828cbde439a3373e1f684ff4, type: 3}
+  startRoomWeapons: 2
+  exitRoomWeapons: 3
+  tableTopHeight: 1
+  exitExtraLootPrefabs:
+  - {fileID: 4661580056157770393, guid: 6bb79ad200cd1d34d9cc6c5c1fe54098, type: 3}
+  exitRoomExtraLoot: 2
+  torchMinSpacing: 3
+  skipTorchesInCorridors: 1
+  floorPropHeight: 0
+  torchHeight: 2.5
+  floorPropWallOffset: 1
+  wallPropInset: 0.3
+  wallPropYawOffset: 0
+  floorPropScale: {x: 2, y: 2, z: 2}
+  wallPropScale: {x: 1, y: 1, z: 1}
+  skipStartRoom: 1
+  skipExitRoom: 1
+  decorParent: {fileID: 455696443}
 --- !u!1 &2115355323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,3 +2283,6 @@ SceneRoots:
   - {fileID: 1083416791}
   - {fileID: 2115355324}
   - {fileID: 1162518330}
+  - {fileID: 455696443}
+  - {fileID: 878814021}
+  - {fileID: 368835464}

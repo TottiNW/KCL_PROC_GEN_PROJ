@@ -1,29 +1,19 @@
-using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// The game's starting point. Unity calls Start() once when the scene begins, and
+/// all this does is tell the FloorManager to build the very first floor. Everything
+/// else (generating, building, spawning, and moving between floors) is handled by
+/// FloorManager — this script just presses the "go" button once.
+/// </summary>
 public class GameBootstrapper : MonoBehaviour
 {
-    [SerializeField] private DungeonGenerator generator;
-    [SerializeField] private DungeonBuilder   builder;
-    [SerializeField] private NavMeshBaker     navMeshBaker;
-    [SerializeField] private PlayerSpawner    playerSpawner;
-    [SerializeField] private EnemySpawner     enemySpawner;
+    [SerializeField] private FloorManager floorManager;
 
-    private IEnumerator Start()
+    private void Start()
     {
-        generator.GenerateMap();
-        builder.BuildDungeon(generator.Map);
-
-        // Wait one frame so the freshly instantiated floor colliders are
-        // registered before the NavMesh bakes onto them.
-        yield return null;
-
-        navMeshBaker.Bake();
-
-        Vector3 startCenter = generator.RoomCenterWorld(generator.StartRoom, builder.TileSize);
-        playerSpawner.SpawnPlayer(startCenter);
-
-        // Enemies spawn last, after the bake, so chase agents land on a valid NavMesh.
-        enemySpawner.SpawnEnemies(generator, builder.TileSize);
+        // LoadFloor is a coroutine (it pauses partway through to wait a frame), so it goes
+        // through StartCoroutine rather than being called like a normal method.
+        StartCoroutine(floorManager.LoadFloor());
     }
 }

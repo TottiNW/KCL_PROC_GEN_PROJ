@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1be6fb23a28d34bb6aa3d9dcfda699, type: 3}
+  m_Name: Floor_1
+  m_EditorClassIdentifier: Assembly-CSharp::FloorConfig
+  mapWidth: 70
+  mapHeight: 70
+  bspDepth: 5
+  minPartitionSize: 10
+  minRoomSize: 5
+  roomPadding: 1
+  corridorBias: 0.85
+  corridorWidenChance: 0.35
+  floorPrefab: {fileID: 0}
+  wallPrefab: {fileID: 0}
+  ceilingPrefab: {fileID: 0}
+  exitPrefab: {fileID: 0}
+  pillarPrefab: {fileID: 0}
+  enemiesPerRoom: 2
+  enemyPrefabs:
+  - {fileID: 4672112258080450259, guid: da05440f855f8514991e3a625a03195b, type: 3}
+  enemyHealthMultiplier: 1
+  startRoomWeapons: 2
+  exitRoomWeapons: 3
